@@ -1,41 +1,45 @@
 #!/usr/bin/env python3
 
-def interest_money(period,
-                   interest,
-                   amount_of_money):
+def inter_money(period,
+                interest,
+                amount_money):
+    """ it may be necessary to add a recalculation
+    of time intervals and percentages """
     # period - the amount of time for which money is invested
     # interest - the interest rate at which money is invested
     # amount_of_money - the amount of money invested
     # interest_money - the amount of money received as a percentage of the money invested
-    interest_money = interest / 100 * period * amount_of_money
-    return interest_money
+    int_money = interest / 100 * period * amount_money
+    return int_money
 
 
-def simple_interest(period,
+def simple_inter(period,
                     interest,
-                    amount_of_money):
+                    amount_money):
     # period - the amount of time for which money is invested
     # interest - the interest rate at which money is invested
     # amount_of_money - the amount of money invested
     # interest_money - the amount of money received as a percentage of the money invested
-    simple_int = amount_of_money + interest_money(period, interest, amount_of_money)
+    simple_int = amount_money + inter_money(period, interest, amount_money)
     return simple_int
 
 
-def compound_interest(period,
+def comp_inter(period,
                       replenishment_period,
                       interest,
-                      amount_of_money,
-                      amount_of_money_for_replenishment):
+                      amount_money,
+                      amount_money_replenishment):
     # period - the amount of time for which money is invested
     # replenishment_period - the investment replenishment period
     # interest - the interest rate at which money is invested
     # amount_of_money - the amount of money invested
     # amount_of_money_for_replenishment - the amount of money to replenish investments
-    compound_int = amount_of_money
     for i in (period / replenishment_period - 1):
-        compound_int = compound_int * (1 + interest / 100) + amount_of_money_for_replenishment
-    return compound_int
+        amount_money = amount_money + \
+                       inter_money(1, interest, amount_money) + \
+                       amount_money_replenishment
+    comp_int = amount_money
+    return comp_int
 
 
 def differentiated_loan_payment(amount_of_money,
