@@ -3,19 +3,47 @@
 def inter_money(period,
                 interest,
                 amount_money):
-    """ it may be necessary to add a recalculation
-    of time intervals and percentages """
+    # TODO it may be necessary to add a recalculation of time intervals and percentages
     # period - the amount of time for which money is invested
     # interest - the interest rate at which money is invested
-    # amount_of_money - the amount of money invested
-    # interest_money - the amount of money received as a percentage of the money invested
+    # amount_money - the amount of money invested
+    # inter_money - the amount of money received as a percentage of the money invested
     int_money = interest / 100 * period * amount_money
     return int_money
 
 
+def inter_rate(interest_money,
+               amount_money):
+    # TODO it may be necessary to add a recalculation of time intervals and percentages
+    # inter_rate - the ratio of the amount of money received from investments to the amount of money invested
+    # amount_money - the amount of money invested
+    # interest_money - the amount of money received as a percentage of the money invested
+    int_rate = interest_money / amount_money * 100
+    return int_rate
+
+
+def discount_rate(interest_money,
+                  accrued_amount):
+    # TODO it may be necessary to add a recalculation of time intervals and percentages
+    # interest_money - the amount of money received as a percentage of the money invested
+    # accrued_amount - total amount of money after investment
+    disc_rate = interest_money / accrued_amount * 100
+    return disc_rate
+
+
+def capital_growth_index(accrued_amount,
+                         amount_money):
+    # TODO it may be necessary to add a recalculation of time intervals and percentages
+    # accrued_amount - total amount of money after investment
+    # amount_money - the amount of money invested
+    cap_grow_ind = accrued_amount / amount_money
+    return cap_grow_ind
+
+
 def simple_inter(period,
-                    interest,
-                    amount_money):
+                 interest,
+                 amount_money):
+    # TODO it may be necessary to add a recalculation of time intervals and percentages
     # period - the amount of time for which money is invested
     # interest - the interest rate at which money is invested
     # amount_of_money - the amount of money invested
@@ -25,10 +53,12 @@ def simple_inter(period,
 
 
 def comp_inter(period,
-                      replenishment_period,
-                      interest,
-                      amount_money,
-                      amount_money_replenishment):
+               replenishment_period,
+               interest,
+               amount_money,
+               amount_money_replenishment):
+    # TODO it may be necessary to add a settlement with different
+    #  replenishment times and different capitalization times
     # period - the amount of time for which money is invested
     # replenishment_period - the investment replenishment period
     # interest - the interest rate at which money is invested
@@ -69,27 +99,3 @@ def annuity_loan_payments(amount_of_money,
     mp = amount_of_money * ak
     total = mp * mp_cnt
     return round(mp, 2), round(total, 2)
-
-# TODO Visit JB Web resources:
-# 11
-# 12
-# todo
-# 13
-# 14
-# 15
-# 16
-# 17
-# 18
-# 19
-# 20
-# 21
-# 22
-# 23
-# 24
-# 25
-# 26
-# 27
-# 28
-# 29
-# 30
-# 31

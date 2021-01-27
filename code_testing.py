@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
 
-from bii import interest_money
+from bii import simple_inter
 
-print(interest_money(2, 20, 100))
+print(simple_inter(2, 5, 100))
